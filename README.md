@@ -29,7 +29,6 @@ The raw transaction data is resampled to monthly frequency (48 periods). The tra
 
 ### Results (test set: Mar–Dec 2014)
 
-> Results below are indicative — rerun the notebook to get exact figures on your machine.
 
 | Model | MAE ($) | RMSE ($) | MAPE (%) |
 |---|---|---|---|
@@ -39,8 +38,6 @@ The raw transaction data is resampled to monthly frequency (48 periods). The tra
 | XGBoost | 5821.08 | 6889.67 | 24.65 |
 
 
-
----
 
 ## Project Structure
 
