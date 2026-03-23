@@ -43,9 +43,10 @@ The raw transaction data is resampled to monthly frequency (48 periods). The tra
 
 ```
 salesforecasting/
-├── salesforecasting_fixed.ipynb   # Main notebook (19 sections)
+├── salesforecasting.ipynb         # Main notebook (19 sections)
 ├── Amazon 2_Raw.xlsx              # Raw dataset (required)
 ├── requirements.txt               # Python dependencies
+├── .gitignore                     # Git ignore rules
 ├── README.md                      # This file
 ├── correlation_matrix.png         # Generated on run
 └── residuals_analysis.png         # Generated on run
@@ -89,7 +90,7 @@ Place `Amazon 2_Raw.xlsx` in the project root (same folder as the notebook).
 ### 3. Launch
 
 ```bash
-jupyter notebook salesforecasting_fixed.ipynb
+jupyter notebook salesforecasting.ipynb
 ```
 
 Then **Run All** (`Kernel → Restart & Run All`).
@@ -98,11 +99,11 @@ Then **Run All** (`Kernel → Restart & Run All`).
 
 ## Key Findings
 
-- **Monthly sales grew ~44% year-over-year** on average between 2011 and 2014, with strong Q4 seasonality.
-- **XGBoost** consistently achieved the lowest MAE (~10% MAPE), driven by the 12-month lag features capturing recent sales momentum.
-- **Holt-Winters** was the strongest statistical baseline, outperforming SARIMA on this short dataset by capturing both trend and seasonality without overfitting.
-- **LSTM** requires more data to generalise well; with only 38 training months, its advantage over statistical models is limited.
-- SHAP analysis revealed that `Lag_1` (previous month's sales) is by far the most influential feature for XGBoost, followed by `Rolling_Mean_3M`.
+- **Monthly sales exhibit strong Q4 seasonality** with a clear upward trend across 2011–2014.
+- **Holt-Winters** achieved the best performance overall (MAE $3,474 / 14.52% MAPE), effectively capturing both trend and additive seasonality on this short dataset.
+- **SARIMA** was the second-best model (MAE $4,182 / 17.17% MAPE), providing a solid statistical baseline with seasonal differencing.
+- **LSTM and XGBoost underperformed** the statistical models (~24–25% MAPE), likely due to the limited training data (only 38 months), which is insufficient for these data-hungry approaches to generalise well.
+- SHAP analysis on the XGBoost model revealed that `Lag_1` (previous month's sales) is the most influential feature, followed by `Rolling_Mean_3M`.
 
 ---
 
