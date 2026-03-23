@@ -38,7 +38,7 @@ The raw transaction data is resampled to monthly frequency (48 periods). The tra
 | LSTM | 5118.19 | 5810.27 | 24.70 |
 | XGBoost | 5821.08 | 6889.67 | 24.65 |
 
-*Run the notebook once and paste your actual numbers here.*
+
 
 ---
 
