@@ -33,10 +33,10 @@ The raw transaction data is resampled to monthly frequency (48 periods). The tra
 
 | Model | MAE ($) | RMSE ($) | MAPE (%) |
 |---|---|---|---|
-| SARIMA | — | — | — |
-| Holt-Winters | — | — | — |
-| LSTM | — | — | — |
-| **XGBoost** | **~2 100** | **~2 700** | **~10%** |
+| SARIMA | 4181.74 | 4840.41 | 17.17 |
+| Holt-Winters | 3473.91 | 4252.19 | 14.52 |
+| LSTM | 5118.19 | 5810.27 | 24.70 |
+| XGBoost | 5821.08 | 6889.67 | 24.65 |
 
 *Run the notebook once and paste your actual numbers here.*
 
